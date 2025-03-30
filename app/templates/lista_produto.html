@@ -1,0 +1,65 @@
+{% load static %}
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="{% static 'admin/css/estilo.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Produto</title>
+    <link rel="icon" type="image/png" href="{% static 'admin/img/box.png' %}">
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body class="body_principal conteudo_principal">
+    <div class="container mt-5">
+        <h2 class="text-center fw-bold  mb-4"> Produto</h2>
+
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="fproduto" class="form-label fw-bold">Nome:</label>
+                        <input type="text" id="fproduto" name="fproduto" class="form-control" 
+                               value="{{ fun.produto }}" readonly>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="data_compra" class="form-label fw-bold">Data de Compra:</label>
+                        <input type="date" id="data_compra" name="data_compra" class="form-control" 
+                               value="{{ fun.data_compra|date:'Y-m-d' }}" readonly>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="data_vencimento" class="form-label fw-bold">Data de Vencimento:</label>
+                        <input type="date" id="data_vencimento" name="data_vencimento" class="form-control" 
+                               value="{{ object.data_vencimento|date:'Y-m-d' }}" readonly>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="quantidade" class="form-label fw-bold">Quantidade:</label>
+                        <input type="text" id="quantidade" name="quantidade" class="form-control" 
+                               value="{{ fun.quantidade }}" readonly>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button type="button"class="btn btn-info btn-sm" onClick="history.go(-1)">
+                 Voltar
+            </button>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">      
+    <footer class="rodape">
+        <hr class="featurette-divider">
+        <div class="container">
+            <p class="mb-1">
+                &copy; Desenvolvido pelo aluno Felipe &middot; 
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

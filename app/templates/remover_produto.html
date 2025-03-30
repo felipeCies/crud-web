@@ -1,0 +1,63 @@
+{% load static %}
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="{% static 'admin/css/estilo.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remover Produto</title>
+    <link rel="icon" type="image/png" href="{% static 'admin/img/box.png' %}">
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body class="body_principal conteudo_principal">
+    <div class="container mt-5">
+        <h2 class="text-center fw-bold mb-4"> Remover Produto?</h2>
+
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Nome:</label>
+                        <input type="text" class="form-control" value="{{ object.produto }}" readonly>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Data de Compra:</label>
+                        <input type="date" class="form-control" value="{{ object.data_compra|date:'Y-m-d' }}" readonly>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Data de Vencimento:</label>
+                        <input type="date" class="form-control" value="{{ object.data_vencimento|date:'Y-m-d' }}" readonly>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Quantidade:</label>
+                        <input type="text" class="form-control" value="{{ object.quantidade }}" readonly>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-sm px-4"> Sim, remover</button>
+                <a href="{% url 'lista_estoque' %}" class="btn btn-info btn-sm px-4"> Cancelar</a>
+            </form>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">      
+    <footer class="rodape">
+        <hr class="featurette-divider">
+        <div class="container">
+            <p class="mb-1">
+                &copy; Desenvolvido pelo aluno Felipe &middot; 
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

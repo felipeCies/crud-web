@@ -1,0 +1,35 @@
+{% load static %}
+{% load django_bootstrap5 %}
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="{% static 'admin/css/estilo.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link rel="icon" type="image/png" href="{% static 'admin/img/box.png' %}">
+    {% bootstrap_css %} {% bootstrap_javascript %} 
+</head>
+<body>
+    <main>
+    <div class="container d-flex flex-column justify-content-top align-items-center vh-100 text-center">
+        <h1 >Bem-vindo a Página Inicial!</h1>
+        <p>Inicie o gerencionamento de estoque!</p>
+        <a href="{% url 'login' %}" class="btn btn-primary">Ir para a Lista de Produtos</a>
+    </div>
+
+    <hr class="featurette-divider">      
+    <footer class="container-fluid bg-light text-center py-3 mt-auto">
+        <hr class="featurette-divider">
+        <div class="container">
+            <p class="mb-1">
+                &copy; Desenvolvido pelo aluno Felipe &middot; 
+            </p>
+            <p><a href="#" class="btn btn-link">Voltar ao topo</a></p>
+        </div>
+    </footer>
+    <main>  
+    
+</body>
+</html>
+

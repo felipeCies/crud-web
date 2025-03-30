@@ -1,0 +1,62 @@
+{% load static %}
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="{% static 'admin/css/estilo.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Estoque</title>
+    <link rel="icon" type="image/png" href="{% static 'admin/img/box.png' %}">
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body class="body_principal">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h3 class="text-center fw-bold mb-4">Cadastro de Produto</h3>
+                    <form method="post" class="fw-bold mb-4 text-dark">
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label for="id_produto" class="form-label">Nome do Produto:</label>
+                            <input type="text" name="produto" id="produto" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_data_compra" class="form-label">Data de Compra:</label>
+                            <input type="date" name="data_compra" id="id_data_compra" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_data_vencimento" class="form-label">Data de Vencimento:</label>
+                            <input type="date" name="data_vencimento" id="id_data_vencimento" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_quantidade" class="form-label">Quantidade:</label>
+                            <input type="number" step="0.01" name="quantidade" id="id_quantidade" class="form-control" required>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-danger btn-sm px-4">Cadastrar</button>
+                            <a href="{% url 'lista_estoque' %}" class="btn btn-info btn-sm px-4">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    <footer class="rodape">
+        <hr class="featurette-divider">
+        <div class="container">
+            <p class="mb-1">
+                &copy; Desenvolvido pelo aluno Felipe &middot;
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

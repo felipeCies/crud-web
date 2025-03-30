@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+    background-image: url("../img/fundo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.body_principal {
+    font-size: 100%;
+    background: linear-gradient(68.15deg, #69b2d6 16.62%, #69b2d6 16.62%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .conteudo-principal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 50px;
+  }
+  
+  .conteudo-principal-escrito-titulo {
+    font-family: 'Righteous', cursive;
+    font-weight: 400;
+    font-size: 64px;
+    color: #FFF2E7;
+  }
+
+  .rodape {
+    padding: 32px;
+    border-top: 0.4px solid #4fa0cf 16.62%;
+    text-align: center;
+    width: 80%;
+  }
+
+  .conteudo-formulario {
+    background-color: rgb(51, 207, 255);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+ 
+  }
+
+  

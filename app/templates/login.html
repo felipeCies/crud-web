@@ -1,0 +1,40 @@
+{% load static %}
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'admin/css/estilo.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" type="image/png" href="{% static 'admin/img/box.png' %}">
+</head>
+<body class="body_principal">
+    <div class="container mt-5" >
+        <h2 class="text-center fw-bold mb-4">Login</h2>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST"  class="mx-auto p-4 border rounded shadow fw-bold mb-4 bg-light text-dark" style="max-width: 400px;">
+            {% csrf_token %}
+            {{ form.as_p }}  
+
+            <button type="submit" class="btn btn-primary w-100">Entrar</button>
+        </form>       
+    </div>
+    <footer class="rodape">
+        <hr class="featurette-divider">
+        <div class="container">
+            <p class="mb-1">
+                &copy; Desenvolvido pelo aluno Felipe &middot; 
+            </p>
+            <p><a href="#" class="btn btn-link">Voltar ao topo</a></p>
+        </div>
+    </footer>
+</body>
+</html>
